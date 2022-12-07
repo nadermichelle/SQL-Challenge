@@ -22,6 +22,8 @@ SELECT MD.geo, sum(MD.clicks), sum(MD.impressions), sum(SR.revenue), sum(SR.reve
 FROM challenge.marketing_data MD INNER JOIN challenge.store_revenue SR ON MD.geo = RIGHT(SR.store_location, 2)
 GROUP BY 1;
 
+The most efficient store is the CA location. This is because they have the highest revenue to clicks and revenue to impressions ratio. 
+
 #### Question 5: (Challenge) Generate a query to rank in order the top 10 revenue producing states
 SELECT RIGHT(store_location, 2), sum(revenue)
 FROM store_revenue 
